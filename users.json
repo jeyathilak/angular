@@ -1,0 +1,90 @@
+[
+    {
+        "userId": "tcopper",
+        "name": "Tiancum Copper",
+        "company": "Acme",
+        "email": "tcopper@gmail.com",
+        "userType": "EXTERNAL",
+        "admin": true
+    },
+    {
+        "userId": "mbystedt",
+        "name": "Matthew Bystedt",
+        "company": "Acme",
+        "email": "mabysted@acme.com",
+        "userType": "INTERNAL",
+        "admin": true
+    },
+    {
+        "userId": "dsunders",
+        "name": "David Sundersingh",
+        "company": "Acme",
+        "email": "jeyathilak@yahoo.com",
+        "userType": "INTERNAL",
+        "admin": true
+    },
+    {
+        "userId": "jacob",
+        "name": "Jacob Mathew",
+        "company": "Acme",
+        "email": "jacob@acme.com",
+        "userType": "INTERNAL",
+        "admin": true
+    },
+    {
+        "userId": "josh",
+        "name": "Josh Hill",
+        "company": "Acme",
+        "email": "jhill@gmail.com",
+        "userType": "EXTERNAL",
+        "admin": true
+    },
+    {
+        "userId": "deadted",
+        "name": "Ted Bob",
+        "company": "Acme",
+        "email": "teddead@gmail.com",
+        "userType": "EXTERNAL",
+        "admin": true
+    },
+    {
+        "userId": "mred",
+        "name": "Better Red",
+        "company": "Acme",
+        "email": "mred@gmail.com",
+        "userType": "EXTERNAL",
+        "admin": true
+    },
+    {
+        "userId": "maven",
+        "name": "Moroni Maven",
+        "company": "Acme",
+        "email": "moroni@gmail.com",
+        "userType": "EXTERNAL",
+        "admin": true
+    },
+    {
+        "userId": "tiancum",
+        "name": "Tiancum Train",
+        "company": "Acme",
+        "email": "tiancum@gmail.com",
+        "userType": "EXTERNAL",
+        "admin": true
+    },
+    {
+        "userId": "bianica",
+        "name": "Bianica Banana",
+        "company": "Acme",
+        "email": "bianica@gmail.com",
+        "userType": "EXTERNAL",
+        "admin": true
+    },
+    {
+        "userId": "trill",
+        "name": "Trillium Flower",
+        "company": "Acme",
+        "email": "trill@gmail.com",
+        "userType": "EXTERNAL",
+        "admin": true
+    }
+]
