@@ -1,0 +1,162 @@
+
+<!doctype html>
+<html ng-app="popOverApp">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    /* tree folder */
+.cs-folder-icon {
+  background-image: url(img/foldericon.png);
+  width: 16px;
+  height: 15px;
+  display: inline-block;
+}
+.cs-folder-text {
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+.cs-nofolder-text {
+  color: #333;
+  font-weight: normal;
+  cursor: inherit;
+  margin-left: 10px;
+}
+
+.de-getting-started {
+  color: #333;
+}
+
+/* tree stuff */
+.angular-ui-tree-node a {
+  display: block;
+  text-decoration: none;
+}
+
+.angular-ui-tree-handle {
+  cursor: pointer;
+  padding: 10px 10px;
+}
+
+.angular-ui-tree-empty {
+  min-height: 0;
+  border: none;
+}
+
+#library-tree {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#library-tree li {
+  width: 100%;
+}
+
+#library-tree li a {
+  padding: 0 0 0 15px;
+}
+
+#library-tree li a:focus  {
+  background-color: #428bca;
+  color: #fff;
+}
+
+.action {
+  color: #428bca;
+  cursor: pointer;
+}
+
+
+
+</style>
+  </head>
+  <body>
+  	<script type="text/ng-template" id="library-hovercard.html">
+		<div class="container hovercard" style="width: 345px; font-size: 12px;">
+		  <div class="row">
+		    <div class="col-xs-4"><b>Name:</b></div>
+		    <div class="col-xs-8">{{ node.name }}</div>
+		  </div>
+		  <div class="row">
+		    <div class="col-xs-4"><b>Folder:</b></div>
+		    <div class="col-xs-8">{{ node.folder }}</div>
+		  </div>
+		  <div class="row">
+		    <div class="col-xs-4"><b>Created Date:</b></div>
+		    <div class="col-xs-8">{{ node.createdDate }}</div>
+		  </div>
+		  <div class="row">
+		    <div class="col-xs-4"><b>Modified Date:</b></div>
+		    <div class="col-xs-8">{{ node.modifiedDate }}</div>
+		  </div>
+		</div>
+	</script>
+	<script type="text/javascript">
+		var app = angular.module('popOverApp', ['ui.bootstrap']);
+
+		app.controller('PopoverCtrl', function($scope, Tree) {
+			$scope.data = Tree;
+		});
+
+		app.factory('Tree', function() {
+			var tree = [
+					    {
+					      "folder": "smalluva/external",
+					      "name": "Viagreat",
+					      "owner": "admin",
+					      "description": "Consequat deserunt adipisicing non pariatur velit excepteur sit eiusmod occaecat.",
+					      "title": "Viagreat",
+					      "nodeId": "workspace://SpacesStore/f7201f35-5f9f-4cd6-9f80-7db5f3525694",
+					      "created": "2015/02/02 06:49 GMT",
+					      "modified": "2014/08/28 10:29 GMT",
+					      "createdDate": "03/04/2014 10:24 GMT",
+					      "modifiedDate": "06/09/2015 07:16 GMT",
+					      "type": "folder"
+					    },
+					    {
+					      "folder": "smalluva/external",
+					      "name": "Terrasys",
+					      "owner": "admin",
+					      "description": "Minim est irure cillum veniam officia commodo consectetur laboris laboris fugiat voluptate sunt labore.",
+					      "title": "Terrasys",
+					      "nodeId": "workspace://SpacesStore/4b16ac83-9bc0-422d-aa31-4c715d31ad1d",
+					      "created": "2015/08/06 12:21 GMT",
+					      "modified": "2014/04/18 11:25 GMT",
+					      "createdDate": "03/26/2014 05:08 GMT",
+					      "modifiedDate": "11/08/2014 05:05 GMT",
+					      "type": "folder"
+					    },
+					    {
+					      "folder": "smalluva/external",
+					      "name": "Musaphics",
+					      "owner": "admin",
+					      "description": "Amet tempor elit excepteur excepteur laborum amet occaecat culpa sint nostrud aute eu.",
+					      "title": "Musaphics",
+					      "nodeId": "workspace://SpacesStore/063d3860-1251-40db-b51b-fd64d569afcc",
+					      "created": "2015/02/26 02:17 GMT",
+					      "modified": "2015/01/31 10:28 GMT",
+					      "createdDate": "09/03/2015 03:40 GMT",
+					      "modifiedDate": "01/16/2015 09:36 GMT",
+					      "type": "folder"
+					    }
+			    ];
+
+			return tree;
+		});
+
+		</script>
+
+        <ul id="library-tree" class="nav nav-pills nav-stacked" ng-controller="PopoverCtrl">
+	        <li active-node='node' ng-repeat="node in data" class="angular-ui-tree-node cd-nav-list">
+	            <div class="tree-node tree-node-content angular-ui-tree-handle">
+	              <span class="cs-folder-icon"></span>
+	              <span class="cs-folder-text" popover-template="library-hovercard.html" popover-placement="right" popover-trigger="mouseenter">{{ node.name | limitTo:23 }}{{ node.name.length > 23 ? "..." : "" }}</span>
+	            </div>
+	        </li>
+	      </ul>
+ </body>
+</html>  
